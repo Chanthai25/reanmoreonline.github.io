@@ -1,0 +1,272 @@
+/* @import url(); */
+:root {
+  --primary-color: dodgerblue;
+  --color-light: white;
+  --border-radius-one: 15px;
+  --border-radius-two: 20px;
+  --box-shadow-one: 0 0 5px rgb(237, 237, 237);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.top-page {
+  background-color: rgb(0, 0, 0, 0.7);
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  /*Note*/
+  backdrop-filter: blur(75px);
+  -webkit-backdrop-filter: blur(75px);
+}
+html {
+  /*62.5% of 16px =10px;*/
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 200vh;
+  background-color: #f5f2f2;
+}
+
+ul {
+  list-style-type: none;
+  /* display: flex; */
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a,
+p,
+li,
+span {
+  font-size: 2rem;
+}
+h1 {
+  font-size: 4.5rem;
+}
+h2,
+h3,
+h4,
+h5 {
+  font-size: 3rem;
+}
+/*Container-width*/
+.container-width {
+  max-width: 1020px;
+  margin: auto;
+}
+.populor-courses {
+  padding: 0 2rem;
+}
+.grid-1x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .grid-1x3 {
+    
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.grid-1x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-1x4{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-hero {
+    padding: 1rem;
+  }
+  .grid-1x2 {
+    grid-template-columns: 1fr;
+    /* fr=1columns */
+  }
+  .hero-desc {
+    text-align: center;
+  }
+  .grid-1x3 {
+    grid-template-columns: 1fr;
+  }
+  .grid-1x4{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+/*button*/
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.7rem 2.2rem;
+  font-weight: bold;
+  border: none;
+  font-size: 2.2rem;
+  border-radius: var(--border-radius-one);
+  cursor: pointer;
+  /* background-color: var(--color-light); */
+}
+.btn-primary {
+  color: var(--color-light);
+  background-color: var(--primary-color);
+}
+.btn-secondary {
+  color: gold;
+}
+.btn-accent {
+  background-color: lightgray;
+}
+.btn-block {
+  width: 100%;
+}
+/*Navigatton bar*/
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+.logo > img {
+  width: 100px;
+}
+.nav-lists {
+  display: flex;
+  gap: 2rem;
+  /* width: 100%; */
+}
+.nav-links > a {
+  color: var(--color-light);
+}
+.icon-toggler {
+  color: var(--color-light);
+  display: none;
+  cursor: pointer;
+  /* display: none; */
+}
+@media screen and (max-width: 768px) {
+  .icon-toggler {
+    display: block;
+  }
+  .nav-lists {
+    width: 100%;
+    margin: 2.5rem 0;
+    display: none;
+    flex-direction: column;
+  }
+  .nav-links {
+    border-bottom: 1px solid rgba(145, 139, 139, 0.322);
+  }
+  .navigation {
+    flex-wrap: wrap;
+  }
+  /* .nav-lists{
+    width: 100%;
+    margin: 2.5rem 0;
+  } */
+}
+/*Java*/
+
+.nav-lists.show {
+  display: flex;
+}
+/*end of navigatiion bar*/
+/*Hero Section*/
+.grid-hero {
+  align-items: center;
+}
+.hero-img {
+  max-width: 600px;
+}
+.hero-img > img {
+  width: 100%;
+}
+.hero-heading {
+  color: var(--color-light);
+  line-height: 1.2;
+}
+.hero-desc > p {
+  color: var(--color-light);
+  margin: 2rem 0;
+}
+.hero {
+  background-color: #888888;
+}
+/*end of hero section*/
+.course-card {
+  /* width: 450px; */
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius-two);
+  box-shadow: var(--box-shadow-one);
+}
+.course-image > img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.course-heading {
+  text-align: center;
+}
+
+.course-card > p {
+  text-align: center;
+  margin: 1.5rem;
+}
+.btn-container {
+  display: flex;
+  gap: 1.5rem;
+}
+.pc-heading {
+  text-align: center;
+  font-size: 5.5rem;
+  margin: 7rem 0;
+}
+.cate-heading{
+  text-align: center;
+  font-size: 5rem;
+  margin: 7rem 0;
+}
+.icon-cate-link{
+width: 150px;
+}
+.icon-cate-link >img{
+  width: 100%;
+  transition: transform 0.2s;
+}
+.cate-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  /* width: 200px; */
+  border-radius: var(--border-radius-two);
+  padding: 2rem;
+
+}
+.cate-link:hover >.icon-cate-link >img{
+  transform: scale(1.05);
+
+}
+.footer{
+  margin-top: 4rem;
+  padding: 6rem 2rem;
+  background-color: rgb(5, 5, 41);
+  
+}
+.footer-links >a {
+  color: rgb(228, 228, 228);
+  font-family: 'Roboto Slab', serif;
+
+}
+.footer-links >a:hover {
+ color: var(--color-light);
+}
+.copyright{
+  color: var(--color-light);
+}
